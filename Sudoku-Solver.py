@@ -10,8 +10,9 @@ board = [
     [0, 9, 0, 0, 0, 0, 0, 5, 0]
 ]
 
-def solve(bo):
+print("Solving...")
 
+def solve(bo):
     find = find_empty(bo)
     if not find:
         return True
@@ -29,8 +30,8 @@ def solve(bo):
 
     return False
 
+
 def valid(bo, num, pos):
-    
     # Checks the row
     for i in range(len(bo[0])):
         if bo[pos[0]][i] == num and pos[1] != i:
@@ -52,8 +53,9 @@ def valid(bo, num, pos):
 
     return True
 
+
 def print_board(bo):
-# Prints the Sudoku Board
+    # Prints the Sudoku Board
 
     for i in range(len(bo)):
         if i % 3 == 0 and i != 0:
@@ -68,8 +70,9 @@ def print_board(bo):
             else:
                 print(str(bo[i][j]) + " ", end="")
 
+
 def find_empty(bo):
-# Finds empty space in Sudoku Board
+    # Finds empty space in Sudoku Board
 
     for i in range(len(bo)):
         for j in range(len(bo[0])):
@@ -77,7 +80,9 @@ def find_empty(bo):
                 return (i, j)
     return None
 
+
 print_board(board)
+print("Solved!")
 solve(board)
 print("________________________")
 print_board(board)
